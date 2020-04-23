@@ -1,0 +1,299 @@
+
+/*Most made with flexbox and media queries*/
+/*Standard is for large and extralarge devices*/
+
+body{
+	margin: 0;
+	font-family: "Corbel";
+	background-color: #addbc0;
+}
+
+/*Header with navigation bar*/
+
+header {
+	height: 100px;
+	width: 100%;
+}
+
+.navBar{
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	position: fixed;
+	z-index: 3;
+	width: 100%;
+	background-color: #addbc0;
+}
+
+.standardContainer{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.hiddenContainer{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#logo{
+	color: white;
+	text-shadow: 2px 2px 9px black;
+	font-size: 40;
+	padding: 0 40 0 10;
+	margin: 0;
+}
+
+.standardNav {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.menuButton{
+	color: white;
+	text-decoration: none;
+	font-size: 20;
+	padding: 10px;
+	background-color: #6bcf93;
+	margin: 5px;
+}
+
+.menuButton:hover{
+	background-color: black;
+	text-decoration: none;
+	color: white;
+}
+
+/*Mobile navigation bar*/
+
+#menuCheck { 
+    display: none; 
+} 
+
+#menuLabel{
+	display: none;
+	padding: 20px;
+	cursor: pointer;
+}
+
+#menuImg{
+	width: 30px;
+}
+
+.hiddenNav{ 
+    display: none; 
+    padding: 20px; 
+
+} 
+ 
+
+/*Introduction section with picture and introduction text
+about the site*/
+
+.introContainer{
+	position: relative;
+	color: white;
+}
+
+.introContainer h1{
+	position: absolute;
+	top: 30px;
+	left: 50%;
+	width: 40%;
+	padding: 20px;
+	font-size: 30;
+	font-weight: normal;
+	text-shadow: 2px 2px 5px black;
+	text-align: center;
+}
+
+.imageText {
+	position: absolute;
+	bottom: 0;
+	width: 40%;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: left;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.imageText h3{
+	font-size: 18;
+	font-weight: normal;
+}
+
+.imageText p{
+	font-size: 15;
+}
+
+.introContainer img{
+	width: 100%;
+	
+}
+
+/*The labels/check buttons that displays when screen size
+decreases to mobile level*/
+
+#readMoreLabel{
+	display: none;
+	cursor: pointer;
+	width: 30px;
+}
+
+#readMoreCheck{
+	display: none;
+}
+
+#closeLabel{
+	display: none;
+	cursor: pointer;
+	width: 30px;
+}
+
+
+/*Photogallery*/
+
+.galleryFrame{
+	background-color: black;
+	color: white;
+	width: 100%;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 10px;
+	font-size: 20;
+}
+
+.gallery{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+.gallery a{
+	padding: 2px;
+	opacity: 0.8;
+}
+
+.gallery a:hover{
+	opacity: 1;
+}
+
+.galleryImg{
+	width: 280px;
+
+}
+
+/*Footer*/
+
+.bottomBar {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+	color: grey;
+	height: 80px;
+	width: 100%;
+}
+
+.bottomBar p, .bottomBar img{
+	padding: 10px;
+}
+
+/*Small and Medium devices
+Event when screen gets too small for navigation bar*/
+/*Standard menu bars disappears and mobile nav bar displays*/
+
+@media (max-width: 992px) { 
+    .standardNav { 
+        display: none; 
+    } 
+
+    #logo {
+    	padding: 0;
+    }
+
+    #menuLabel { 
+        display: block;
+    }  
+
+    #menuCheck:checked ~ .hiddenNav{ 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+	} 
+
+	/*from this screen size and down the font size are static
+	to still be readable*/
+	.introContainer .imageText h3{
+		font-size: 16;
+	} 
+
+	.introContainer .imageText p{
+		font-size: 12;
+	} 
+} 
+
+/*Extra small devices
+Event when screen decreases to the level where 
+photos are too big to be put next to each orter
+and imageText overflows image*/
+
+@media (max-width: 600px){
+	.gallery a img{
+		width: 150px;
+	}
+
+	.introContainer h1{
+		font-size: 18;
+	}
+
+	/*Makes image text disappear*/
+	.introContainer .imageText p{
+		display: none;
+	}
+
+	.introContainer .imageText h3{
+		font-size: 12;
+	}
+
+	.introContainer h1{
+		font-size: 16;
+	}
+
+	/*Displays "read more"-checkbox*/
+	#readMoreLabel{
+		display: block;
+	}
+
+	/*Display image text when checkbox is clicked*/
+	#readMoreCheck:checked ~ p{
+		display: block;
+	}
+
+	/*Changes checkbox icon to "cancel"*/
+	#readMoreCheck:checked ~ #readMoreLabel{
+		display: none;
+	}
+
+	#readMoreCheck:checked ~ #closeLabel{
+		display: block;
+	}
+}
+
+
+
