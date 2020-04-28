@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Travel plan</title>
+		<link rel="icon" href ="images/favicon.png" type="image/png">
 		<!-- Latest compiled and minified CSS -->​
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">​
 
@@ -21,7 +22,7 @@
 		<section>
 				<div class="navBar">
 					<div class="standardContainer">
-						<p class="logo">ICELAND</p>
+						<p class="logo"><a href="index.html">ICELAND</a></p>
 						<nav class="standardNav">
 							<a class = "menuButton" href="nature.html">NATURE</a>
 							<a class = "menuButton" href="history.html">HISTORY</a>
@@ -47,7 +48,7 @@
 		</section>
 
 		<section class="introContainer">
-				<img src="images/mountain small.jpg" alt="mountain" title="Mountain" />
+				<img src="images/mountain small.jpg" alt="mountain" title="Mountain by Norris Niman" />
 				<h1>TRAVEL PLAN</h1>
 				<div class="imageText">
 					<h3>Do you think planning a trip can be difficult?</h3>
@@ -60,53 +61,53 @@
 
 		<div class="container">
 			<fieldset>
-				<legend>Send information</legend>
+				<legend>Your trip</legend>
 				<form method="post">
 
 				<div class="row">
-					<div class="col-md-3 col-12">
-						<label class="desLabel">Date for travel</label>
+					<div class="col-md-3 col-12 forms-column">
+						<label class="desLabel">Date of travel</label>
 					</div>
-					<div class="col-md-5 col-6">
-						<label for="dateFrom">from</label>
+					<div class="col-md-5 col-6 forms-column">
+						<label for="dateFrom">from </label>
 						<input type="date" id="dateFrom">
 					</div>
-					<div class="col-md-4 col-6">
-						<label for="dateTo">to</label>
+					<div class="col-md-4 col-6 forms-column">
+						<label for="dateTo">to </label>
 						<input type="date" id="dateTo">
 					</div>
 				</div>
 
 				<div class="row">
-					<div class="col-12">
+					<div class="col-12 forms-column">
 						<label  class="desLabel">Intrested in activities within</label>
 					</div>
 				</div>
 
 				<div class="row">
-					<div class="col-md-3 col-6">
+					<div class="col-md-3 col-6 forms-column">
 						<input type="checkbox" id="natureCheck">
-						<label for="natureCheck">Nature</label>
+						<label for="natureCheck"> Nature</label>
 					</div>
-					<div class="col-md-3 col-6">
+					<div class="col-md-3 col-6 forms-column">
 						<input type="checkbox" id="historyCheck">
-						<label for="historyCheck">History</label>
+						<label for="historyCheck"> History</label>
 					</div>
-					<div class="col-md-3 col-6">	
+					<div class="col-md-3 col-6 forms-column">	
 						<input type="checkbox" id="cultureCheck">
-						<label for="cultureCheck">Culture</label>
+						<label for="cultureCheck"> Culture</label>
 					</div>
-					<div class="col-md-3 col-6">
+					<div class="col-md-3 col-6 forms-column">
 						<input type="checkbox" id="foodCheck">
-						<label for="foodCheck">Food</label>
+						<label for="foodCheck"> Food</label>
 					</div>
 				</div>
 
 				<div class="row">
-					<div class="col-md-6 col-12">
+					<div class="col-md-6 col-12 forms-column">
 						<label class="desLabel">No. of people traveling</label>
 					</div>
-					<div class="col-md-3 col-6">
+					<div class="col-md-3 col-6 forms-column">
 						<label for="noAdults">Adults</label>
 						<select id="noAdults">
 							<option>1</option>
@@ -117,7 +118,7 @@
 							<option>6</option>
 						</select>
 					</div>
-					<div class="col-md-3 col-6">
+					<div class="col-md-3 col-6 forms-column">
 						<label for="noKids">Children</label>
 						<select id="noKids">
 							<option selected>0</option>
@@ -125,40 +126,41 @@
 							<option>2</option>
 							<option>3</option>
 							<option>4</option>
-							<option>5</option>
+							<option>5</option>						
 						</select>
 					</div>
 				</div>
+					
 				<div class="row">
-					<div class="col-md-6 col-12">
+					<div class="col-md-6 col-12 forms-column">
 						<label  class="desLabel">Preference of accommodation</label>
 					</div>
-					<div class="col-md-3 col-6">
+					<div class="col-md-3 col-6 forms-column">
 						<input type="checkbox" id="appartmentCheck">
-						<label for="appartmentCheck">Appartment</label>
+						<label for="appartmentCheck"> Appartment</label>
 					</div>
-					<div class="col-md-3 col-6">
+					<div class="col-md-3 col-6 forms-column">
 						<input type="checkbox" id="hotelCheck">
-						<label for="hotelCheck">Hotel</label>
+						<label for="hotelCheck"> Hotel</label>
 					</div>
 				</div>
 
 				<div class="row">
 					<div class="col-md-4 col-12">
-						<label for="message"  class="desLabel">Other wishes or preferences</label>
+						<label for="message"  class="desLabel">Other wishes or preferences </label>
 					</div>
 					<div class="col-md-8 col-12">
-						<input type="textarea" id="message">
+						<textarea placeholder="Write here..."></textarea>
 					</div>
 				</div>
 
 				<div class="row">
-					<div class="col-md-10 col-12">
+					<div class="col-md-10 col-12 forms-column">
 						<label  class="desLabel">Your e-mail</label>
-						<input type="email" id="email">
+						<input type="email" id="email" placeholder="example@icelandrules.com">
 					</div> 
-					<div class="col-md-2 col-12">
-						<input type="submit" name="Send">
+					<div class="col-md-2 col-12 forms-column">
+						<input type="submit" value="Send" class="menuButton">
 					</div>
 				</div>
 

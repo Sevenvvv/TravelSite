@@ -6,6 +6,7 @@ body{
 	margin: 0;
 	font-family: "Corbel";
 	background-color: #addbc0;
+
 }
 
 /*Header with navigation bar*/
@@ -44,12 +45,17 @@ header {
 }
 
 .logo{
+	margin-bottom: 0;
+}
+.logo a{
 	color: white;
 	text-shadow: 2px 2px 9px black;
 	font-size: 40px;
 	padding: 0px 40px 0px 10px;
 	margin: 0;
+	text-decoration: none;
 }
+
 
 .standardNav {
 	display: flex;
@@ -65,6 +71,7 @@ header {
 	padding: 10px;
 	background-color: #6bcf93;
 	margin: 5px;
+	border-radius: 3px;
 }
 
 .menuButton:hover{
@@ -85,8 +92,12 @@ footer .menuButton {
 
 #menuLabel{
 	display: none;
-	padding: 20px;
+	padding: 10px;
 	cursor: pointer;
+}
+
+#menuLabel:hover{
+	background-color: #6bcf93;
 }
 
 #menuImg{
@@ -205,8 +216,13 @@ decreases to mobile level*/
 /*Contact form*/
 
 fieldset{
-	border: solid;
+	border-radius: 3px;
 	margin: 20px;
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	background-color: #EBEDF0;
 }
 
 legend{
@@ -215,30 +231,70 @@ legend{
 	text-align: center;
 	background-color: black;
 	color: white;
+	border-radius: 3px;
+}
+
+label{
+	margin:0;
+
 }
 
 .row{
 	margin: 0px;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .row .desLabel{
 	font-weight: bolder;
 }
 
-input[type=textarea]{
+
+.forms-column{
+	display: flex;
+	align-items: center;
+}
+
+select{
+	padding: 5px;
+	border-width: 1px;
+    border-style: solid;
+    border-color: rgb(169, 169, 169);
+    border-radius: 3px;
+}
+
+textarea{
 	width: 100%;
 	height: 150px;
+	padding: 10px 10px;
+	border-radius: 3px;
+
+}
+
+input[type=submit]{
+	border: none;
 }
 
 input[type=email]{
 	padding: 5px;
 	width: 65%;
+	border-width: 1px;
+    border-style: solid;
+    border-color: rgb(169, 169, 169);
+    border-radius: 3px;
 }
 
-input[type=submit]{
 
+input[type=date]{
+	padding: 5px 5px;
+	border-width: 1px;
+    border-style: solid;
+    border-color: rgb(169, 169, 169);
+    border-radius: 3px;
+}
+
+#zeroKids:checked ~ input{
+	display: none;
 }
 
 
@@ -248,15 +304,23 @@ input[type=submit]{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: flex-end;
+	justify-content: space-between;
 	color: grey;
-	height: 80px;
+	height: 100px;
 	width: 100%;
 }
 
-.bottomBar p, .bottomBar img{
-	padding: 10px;
+.attribute-section{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
+
+.attribute-section a{
+	text-decoration: none;
+}
+
 
 /*Small and Medium devices
 Event when screen gets too small for navigation bar*/
@@ -291,6 +355,11 @@ Event when screen gets too small for navigation bar*/
 	.introContainer .imageText p{
 		font-size: 12px;
 	} 
+
+	fieldset{
+		width: auto;
+	}
+
 } 
 
 /*Extra small devices
