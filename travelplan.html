@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Travel plan</title>
+		<!-- Latest compiled and minified CSS -->​
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">​
+
+		<!-- jQuery library -->​
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>​
+
+		<!-- Popper JS -->​
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>​
+
+		<!-- Latest compiled JavaScript -->​
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type = "text/css" href="styles/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+<body>
+		<header></header>
+		<section>
+				<div class="navBar">
+					<div class="standardContainer">
+						<p class="logo">ICELAND</p>
+						<nav class="standardNav">
+							<a class = "menuButton" href="nature.html">NATURE</a>
+							<a class = "menuButton" href="history.html">HISTORY</a>
+							<a class = "menuButton" href="culture.html">CULTURE</a>
+							<a class = "menuButton" href="food.html">FOOD</a>
+							<a class = "menuButton" href="places.html">PLACES TO VISIT</a>
+						</nav>	
+						<label id="menuLabel" for="menuCheck"><img src="images/menu.png" id ="menuImg" alt="menu" title="Menu"/></label>
+					</div>
+
+					
+					<div class="hiddenContainer">
+						<input type="checkbox" id="menuCheck">
+						<nav class="hiddenNav">
+							<a class = "menuButton" href="nature.html">NATURE</a>
+							<a class = "menuButton" href="history.html">HISTORY</a>
+							<a class = "menuButton" href="culture.html">CULTURE</a>
+							<a class = "menuButton" href="food.html">FOOD</a>
+							<a class = "menuButton" href="places.html">PLACES TO VISIT</a>
+						</nav>
+					</div>
+				</div>
+		</section>
+
+		<section class="introContainer">
+				<img src="images/mountain small.jpg" alt="mountain" title="Mountain" />
+				<h1>TRAVEL PLAN</h1>
+				<div class="imageText">
+					<h3>Do you think planning a trip can be difficult?</h3>
+					<input type="checkbox" id="readMoreCheck">
+					<label id="readMoreLabel" for="readMoreCheck"><img src="images/dots.png" id="dotsImg" alt="read more" title="Read More"/></label>
+					<label id="closeLabel" for="readMoreCheck"><img src="images/cancel.png" id="closeImg"/></label>
+					<p>Don't worry! We'll help you!<br/>Fill out the form below and we will send you a custom-made Iceland travel plan.</p>	
+				</div>
+		</section>
+
+		<div class="container">
+			<fieldset>
+				<legend>Send information</legend>
+				<form method="post">
+
+				<div class="row">
+					<div class="col-md-3 col-12">
+						<label class="desLabel">Date for travel</label>
+					</div>
+					<div class="col-md-5 col-6">
+						<label for="dateFrom">from</label>
+						<input type="date" id="dateFrom">
+					</div>
+					<div class="col-md-4 col-6">
+						<label for="dateTo">to</label>
+						<input type="date" id="dateTo">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-12">
+						<label  class="desLabel">Intrested in activities within</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-3 col-6">
+						<input type="checkbox" id="natureCheck">
+						<label for="natureCheck">Nature</label>
+					</div>
+					<div class="col-md-3 col-6">
+						<input type="checkbox" id="historyCheck">
+						<label for="historyCheck">History</label>
+					</div>
+					<div class="col-md-3 col-6">	
+						<input type="checkbox" id="cultureCheck">
+						<label for="cultureCheck">Culture</label>
+					</div>
+					<div class="col-md-3 col-6">
+						<input type="checkbox" id="foodCheck">
+						<label for="foodCheck">Food</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6 col-12">
+						<label class="desLabel">No. of people traveling</label>
+					</div>
+					<div class="col-md-3 col-6">
+						<label for="noAdults">Adults</label>
+						<select id="noAdults">
+							<option>1</option>
+							<option selected>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+						</select>
+					</div>
+					<div class="col-md-3 col-6">
+						<label for="noKids">Children</label>
+						<select id="noKids">
+							<option selected>0</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-12">
+						<label  class="desLabel">Preference of accommodation</label>
+					</div>
+					<div class="col-md-3 col-6">
+						<input type="checkbox" id="appartmentCheck">
+						<label for="appartmentCheck">Appartment</label>
+					</div>
+					<div class="col-md-3 col-6">
+						<input type="checkbox" id="hotelCheck">
+						<label for="hotelCheck">Hotel</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4 col-12">
+						<label for="message"  class="desLabel">Other wishes or preferences</label>
+					</div>
+					<div class="col-md-8 col-12">
+						<input type="textarea" id="message">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-10 col-12">
+						<label  class="desLabel">Your e-mail</label>
+						<input type="email" id="email">
+					</div> 
+					<div class="col-md-2 col-12">
+						<input type="submit" name="Send">
+					</div>
+				</div>
+
+
+				</form>
+			</fieldset>
+
+		</section>
+
+		<footer class="bottomBar">
+			<p>Iceland rules</p>
+		</footer>
+</body>
+</html>
