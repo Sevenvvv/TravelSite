@@ -6,63 +6,49 @@ body{
 	margin: 0;
 	font-family: "Corbel";
 	background-color: #addbc0;
-
 }
 
 /*Header with navigation bar*/
 
-header {
-	height: 100px;
+header{
+	position: fixed;
 	width: 100%;
+	z-index: 5;
+	top: 0;
 }
 
-.navBar{
-	top: 0;
-	left: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 10px;
-	position: fixed;
-	z-index: 3;
-	width: 100%;
-	background-color: #addbc0;
-}
 
 .standardContainer{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+	flex-wrap: wrap;
+	width: 100%;
+	padding: 10px;
+	background-color: #addbc0;
 }
 
-.hiddenContainer{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
 
 .logo{
-	margin-bottom: 0;
+	margin:0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 10px;
 }
+
 .logo a{
 	color: white;
 	text-shadow: 2px 2px 9px black;
 	font-size: 40px;
-	padding: 0px 40px 0px 10px;
 	margin: 0;
 	text-decoration: none;
 }
 
 
-.standardNav {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-}
+
 
 .menuButton{
 	color: white;
@@ -80,35 +66,36 @@ header {
 	color: white;
 }
 
+
 footer .menuButton {
 	font-size: 15;
 }
 
 /*Mobile navigation bar*/
 
-#menuCheck { 
-    display: none; 
-} 
 
-#menuLabel{
-	display: none;
+#menuToggle{
+	
 	padding: 10px;
 	cursor: pointer;
+	background-color: #addbc0;
+	border: none;
+	outline:none;
 }
 
-#menuLabel:hover{
-	background-color: #6bcf93;
-}
 
 #menuImg{
 	width: 30px;
 }
 
-.hiddenNav{ 
-    display: none; 
+/*.hiddenNav{ 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
     padding: 20px; 
 
-} 
+} */
  
 
 /*Introduction section with picture and introduction text
@@ -117,6 +104,7 @@ about the site*/
 .introContainer{
 	position: relative;
 	color: white;
+	top: 50px;
 }
 
 .introContainer h1{
@@ -126,7 +114,7 @@ about the site*/
 	font-weight: normal;
 	text-shadow: 2px 2px 5px black;
 	text-align: center;
-	top: 30px;
+	top: 10%;
 	right: 5%;
 	width: 40%;
 }
@@ -185,7 +173,7 @@ decreases to mobile level*/
 	color: white;
 	width: 100%;
 	text-align: center;
-	padding-top: 30px;
+	padding-top: 70px;
 	padding-bottom: 10px;
 	font-size: 20px;
 }
@@ -214,6 +202,9 @@ decreases to mobile level*/
 }
 
 /*Contact form*/
+.container{
+	padding-top: 60px;
+}
 
 fieldset{
 	border-radius: 3px;
@@ -261,6 +252,8 @@ select{
     border-style: solid;
     border-color: rgb(169, 169, 169);
     border-radius: 3px;
+    margin-left: 5px;
+	margin-right: 5px;
 }
 
 textarea{
@@ -268,6 +261,8 @@ textarea{
 	height: 150px;
 	padding: 10px 10px;
 	border-radius: 3px;
+	margin-left: 5px;
+	margin-right: 5px;
 
 }
 
@@ -282,6 +277,8 @@ input[type=email]{
     border-style: solid;
     border-color: rgb(169, 169, 169);
     border-radius: 3px;
+    margin-left: 5px;
+	margin-right: 5px;
 }
 
 
@@ -291,12 +288,14 @@ input[type=date]{
     border-style: solid;
     border-color: rgb(169, 169, 169);
     border-radius: 3px;
+    margin-left: 5px;
+	margin-right: 5px;
 }
 
-#zeroKids:checked ~ input{
-	display: none;
+input[type=checkbox]{
+    margin-left: 5px;
+	margin-right: 5px;
 }
-
 
 /*Footer*/
 
@@ -321,6 +320,20 @@ input[type=date]{
 	text-decoration: none;
 }
 
+/*Large and extra large devices*/
+@media (min-width: 993px){
+	.standardNav {
+		display: flex !important;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		padding:20px;
+	}
+
+	#menuToggle{
+		display: none !important;
+	}
+}
 
 /*Small and Medium devices
 Event when screen gets too small for navigation bar*/
@@ -328,23 +341,25 @@ Event when screen gets too small for navigation bar*/
 
 @media (max-width: 992px) { 
     .standardNav { 
-        display: none; 
+        display: flex; 
+    	flex-direction: column; 
+    	justify-content: center; 
+    	align-items: center; 
+    	padding: 20px; 
+    	flex-basis: 100%;
     } 
 
     .logo {
-    	padding: 0;
+    	flex-basis: 50%;
     }
 
-    #menuLabel { 
-        display: block;
+    #menuToggle { 
+        display: flex;
+        flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+        flex-basis: 50%;
     }  
-
-    #menuCheck:checked ~ .hiddenNav{ 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-	} 
 
 	/*from this screen size and down the font size are static
 	to still be readable*/
