@@ -10,61 +10,54 @@ body{
 
 /*Header with navigation bar*/
 
-header {
-	height: 100px;
+header{
+	position: fixed;
 	width: 100%;
+	z-index: 5;
+	top: 0;
 }
 
-.navBar{
-	top: 0;
-	left: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 10px;
-	position: fixed;
-	z-index: 3;
-	width: 100%;
-	background-color: #addbc0;
-}
 
 .standardContainer{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+	flex-wrap: wrap;
+	width: 100%;
+	padding: 10px;
+	background-color: #addbc0;
 }
 
-.hiddenContainer{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
 
-#logo{
-	color: white;
-	text-shadow: 2px 2px 9px black;
-	font-size: 40;
-	padding: 0 40 0 10;
-	margin: 0;
-}
-
-.standardNav {
+.logo{
+	margin:0;
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
 	align-items: center;
+	justify-content: flex-end;
+	padding: 10px;
 }
+
+.logo a{
+	color: white;
+	text-shadow: 2px 2px 9px black;
+	font-size: 40px;
+	margin: 0;
+	text-decoration: none;
+}
+
+
+
 
 .menuButton{
 	color: white;
 	text-decoration: none;
-	font-size: 20;
+	font-size: 20px;
 	padding: 10px;
 	background-color: #6bcf93;
 	margin: 5px;
+	border-radius: 3px;
 }
 
 .menuButton:hover{
@@ -73,27 +66,36 @@ header {
 	color: white;
 }
 
+
+footer .menuButton {
+	font-size: 15;
+}
+
 /*Mobile navigation bar*/
 
-#menuCheck { 
-    display: none; 
-} 
 
-#menuLabel{
-	display: none;
-	padding: 20px;
+#menuToggle{
+	
+	padding: 10px;
 	cursor: pointer;
+	background-color: #addbc0;
+	border: none;
+	outline:none;
 }
+
 
 #menuImg{
 	width: 30px;
 }
 
-.hiddenNav{ 
-    display: none; 
+/*.hiddenNav{ 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
     padding: 20px; 
 
-} 
+} */
  
 
 /*Introduction section with picture and introduction text
@@ -102,19 +104,21 @@ about the site*/
 .introContainer{
 	position: relative;
 	color: white;
+	top: 50px;
 }
 
 .introContainer h1{
 	position: absolute;
-	top: 30px;
-	left: 50%;
-	width: 40%;
 	padding: 20px;
-	font-size: 30;
+	font-size: 30px;
 	font-weight: normal;
 	text-shadow: 2px 2px 5px black;
 	text-align: center;
+	top: 10%;
+	right: 5%;
+	width: 40%;
 }
+
 
 .imageText {
 	position: absolute;
@@ -169,9 +173,9 @@ decreases to mobile level*/
 	color: white;
 	width: 100%;
 	text-align: center;
-	padding-top: 30px;
+	padding-top: 70px;
 	padding-bottom: 10px;
-	font-size: 20;
+	font-size: 20px;
 }
 
 .gallery{
@@ -197,20 +201,138 @@ decreases to mobile level*/
 
 }
 
+/*Contact form*/
+.container{
+	padding-top: 60px;
+}
+
+fieldset{
+	border-radius: 3px;
+	margin: 20px;
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	background-color: #EBEDF0;
+}
+
+legend{
+	width: 30%;
+	font-size: 20px;
+	text-align: center;
+	background-color: black;
+	color: white;
+	border-radius: 3px;
+}
+
+label{
+	margin:0;
+
+}
+
+.row{
+	margin: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.row .desLabel{
+	font-weight: bolder;
+}
+
+
+.forms-column{
+	display: flex;
+	align-items: center;
+}
+
+select{
+	padding: 5px;
+	border-width: 1px;
+    border-style: solid;
+    border-color: rgb(169, 169, 169);
+    border-radius: 3px;
+    margin-left: 5px;
+	margin-right: 5px;
+}
+
+textarea{
+	width: 100%;
+	height: 150px;
+	padding: 10px 10px;
+	border-radius: 3px;
+	margin-left: 5px;
+	margin-right: 5px;
+
+}
+
+input[type=submit]{
+	border: none;
+}
+
+input[type=email]{
+	padding: 5px;
+	width: 65%;
+	border-width: 1px;
+    border-style: solid;
+    border-color: rgb(169, 169, 169);
+    border-radius: 3px;
+    margin-left: 5px;
+	margin-right: 5px;
+}
+
+
+input[type=date]{
+	padding: 5px 5px;
+	border-width: 1px;
+    border-style: solid;
+    border-color: rgb(169, 169, 169);
+    border-radius: 3px;
+    margin-left: 5px;
+	margin-right: 5px;
+}
+
+input[type=checkbox]{
+    margin-left: 5px;
+	margin-right: 5px;
+}
+
 /*Footer*/
 
 .bottomBar {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: flex-end;
+	justify-content: space-between;
 	color: grey;
-	height: 80px;
+	height: 100px;
 	width: 100%;
 }
 
-.bottomBar p, .bottomBar img{
-	padding: 10px;
+.attribute-section{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.attribute-section a{
+	text-decoration: none;
+}
+
+/*Large and extra large devices*/
+@media (min-width: 993px){
+	.standardNav {
+		display: flex !important;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		padding:20px;
+	}
+
+	#menuToggle{
+		display: none !important;
+	}
 }
 
 /*Small and Medium devices
@@ -219,33 +341,40 @@ Event when screen gets too small for navigation bar*/
 
 @media (max-width: 992px) { 
     .standardNav { 
-        display: none; 
+        display: flex; 
+    	flex-direction: column; 
+    	justify-content: center; 
+    	align-items: center; 
+    	padding: 20px; 
+    	flex-basis: 100%;
     } 
 
-    #logo {
-    	padding: 0;
+    .logo {
+    	flex-basis: 50%;
     }
 
-    #menuLabel { 
-        display: block;
+    #menuToggle { 
+        display: flex;
+        flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+        flex-basis: 50%;
     }  
-
-    #menuCheck:checked ~ .hiddenNav{ 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-	} 
 
 	/*from this screen size and down the font size are static
 	to still be readable*/
 	.introContainer .imageText h3{
-		font-size: 16;
+		font-size: 16px;
 	} 
 
 	.introContainer .imageText p{
-		font-size: 12;
+		font-size: 12px;
 	} 
+
+	fieldset{
+		width: auto;
+	}
+
 } 
 
 /*Extra small devices
@@ -259,7 +388,7 @@ and imageText overflows image*/
 	}
 
 	.introContainer h1{
-		font-size: 18;
+		font-size: 18px;
 	}
 
 	/*Makes image text disappear*/
@@ -268,12 +397,9 @@ and imageText overflows image*/
 	}
 
 	.introContainer .imageText h3{
-		font-size: 12;
+		font-size: 12px;
 	}
 
-	.introContainer h1{
-		font-size: 16;
-	}
 
 	/*Displays "read more"-checkbox*/
 	#readMoreLabel{
