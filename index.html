@@ -15,6 +15,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 		<link rel="stylesheet" type = "text/css" href="styles/style.css">
+
 		<script src="jquery.js"></script>
 		<link rel="icon" href ="images/favicon.png" type="image/png">
 
@@ -26,76 +27,62 @@
 
 	<body>
 
-		<header>
-			
-				<div class="standardContainer">
-					<p class="logo"><a href="index.html">ICELAND</a></p>
-					<button id="menuToggle"><img src="images/menu.png" id ="menuImg"/></button>
-					<nav class="standardNav">
-						<a class = "menuButton" href="nature.html">NATURE</a>
-						<a class = "menuButton" href="history.html">HISTORY</a>
-						<a class = "menuButton" href="culture.html">CULTURE</a>
-						<a class = "menuButton" href="places.html">PLACES TO VISIT</a>
-						<a class = "menuButton" href="travelplan.html">TRAVEL PLAN</a>
-					</nav>
-				</div>
-
-				
-		
+		<header class="nav-container">
+			<p class="logo"><a href="index.html">ICELAND</a></p>
+			<button id="menu-toggle"><img src="images/menu.png" id ="menu-img"/></button>
+			<nav class="nav-bar">
+				<a class = "text-button" href="nature.html">NATURE</a>
+				<a class = "text-button" href="history.html">HISTORY</a>
+				<a class = "text-button" href="culture.html">CULTURE</a>
+				<a class = "text-button" href="places.html">PLACES TO VISIT</a>
+				<a class = "text-button" href="travelplan.html">TRAVEL PLAN</a>
+			</nav>
 		</header>
 		
 
 
-		<section>
-			<div class="introContainer">
-				<img src="images/northern lights small.jpg" alt="northern lights" title="Northern Lights by Joshua Earle" />
-				<h1>THE COOLEST PLACE ON EARTH</h1>
-				<div class="imageText">
+		<section class="intro-container">
+				<img class="intro-img" src="images/northern lights small.jpg" alt="northern lights" title="Northern Lights by Joshua Earle" />
+				<h1 class="intro-header">THE COOLEST PLACE ON EARTH</h1>
+				<div class="intro-text">
 					<h3>Are you curious about the country of fire and ice?</h3>
-					<input type="checkbox" id="readMoreCheck">
-					<label id="readMoreLabel" for="readMoreCheck"><img src="images/dots.png" id="dotsImg" alt="read more" title="Read More"/></label>
-					<label id="closeLabel" for="readMoreCheck"><img src="images/cancel.png" id="closeImg"/></label>
+					<input type="checkbox" id="read-check">
+					<label id="readmore-label" for="read-check"><img src="images/dots.png" id="dots-img" alt="read more" title="Read More"/></label>
+					<label id="readless-label" for="read-check"><img src="images/cancel.png" id="close-img"/></label>
 					<p>You have come to the right place!<br/> Learn about the nature of Iceland - its volcanos, geysers and lagoons.<br/> Learn about the Icelandic people and their culture and food.<br/> Learn about what you cannot miss when traveling to Iceland.</p>	
 				</div>
-			</div>
 		</section>
 
 		<section>
-			<div class="galleryFrame">
+			<div class="content-header">
 				<p>PHOTOGALLERY</p>
 			</div>
 			<div class="gallery">
-				<a href="images/waterfall.jpg" target="_blank" title="River by Serey Morm"><img src="images/waterfall.jpg" class ="galleryImg"/></a>
-				<a href="images/lagoon.jpg" target="_blank" title="Lagoon by Jeff Sheldon"><img src="images/lagoon.jpg" class ="galleryImg" /></a>
-				<a href="images/tower.jpg" target="_blank" title="Tower by Ferdinand Stöhr"><img src="images/tower.jpg" class ="galleryImg" /></a>
-				<a href="images/geyser.jpg" target="_blank" title="Geyser by Valdemaras D."><img src="images/geyser.jpg" class ="galleryImg" /></a>
-				<a href="images/ocean.jpg" target="_blank" title="Ocean by Shadman Sakib"><img src="images/ocean.jpg" class ="galleryImg" /></a>
-				<a href="images/volcano.jpg" target="_blank" title="Volcano by Koushik Chowdavarapu"><img src="images/volcano.jpg" class ="galleryImg" /></a>
+				<a href="images/waterfall.jpg" target="_blank" title="River by Serey Morm"><img src="images/waterfall.jpg" class ="gallery-img"/></a>
+				<a href="images/lagoon.jpg" target="_blank" title="Lagoon by Jeff Sheldon"><img src="images/lagoon.jpg" class ="gallery-img" /></a>
+				<a href="images/tower.jpg" target="_blank" title="Tower by Ferdinand Stöhr"><img src="images/tower.jpg" class ="gallery-img" /></a>
+				<a href="images/geyser.jpg" target="_blank" title="Geyser by Valdemaras D."><img src="images/geyser.jpg" class ="gallery-img" /></a>
+				<a href="images/ocean.jpg" target="_blank" title="Ocean by Shadman Sakib"><img src="images/ocean.jpg" class ="gallery-img" /></a>
+				<a href="images/volcano.jpg" target="_blank" title="Volcano by Koushik Chowdavarapu"><img src="images/volcano.jpg" class ="gallery-img" /></a>
 			</div>
-			<div class="galleryFrame"></div>
 		</section>
 		
-		<section>
-			<footer>
-				<div class="bottomBar">
-					
-					<div class="attribute-section">
-						Exit icon made by <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-					</div>
-					<div class="attribute-section">
-						Read-more icon made by <a href="https://www.flaticon.com/authors/alfredo-hernandez" title="Alfredo Hernandez">Alfredo Hernandez</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-					</div>
-					<div class="attribute-section">
-						Menu icon made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-					</div>
-					<div class="attribute-section">
-						Favicon by Icons8
-					</div>
-					<div class="attribute-section">
-						Photos from Unsplash
-					</div>
+		<footer>					
+				<div class="attribution-section">
+					Exit icon made by <a href="https://www.flaticon.com/authors/srip" title="srip" target="_blank">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a>
 				</div>
-			</footer>
-		</section>
+				<div class="attribution-section">
+					Read-more icon made by <a href="https://www.flaticon.com/authors/alfredo-hernandez" title="Alfredo Hernandez" target="_blank">Alfredo Hernandez</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a>
+				</div>
+				<div class="attribution-section">
+					Menu icon made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect" target="_blank">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a>
+				</div>
+				<div class="attribution-section">
+					Favicon by <a href="https://www.icons8.com/" title="Icons8" target="_blank">www.icons8.com</a>
+				</div>
+				<div class="attribution-section">
+					Photos from <a href="https://www.unsplash.com/" title="Unsplash" target="_blank">www.unsplash.com</a>
+				</div>
+		</footer>
 	</body>
 </html>

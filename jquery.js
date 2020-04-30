@@ -1,7 +1,7 @@
 $(document).ready(function(){
-	$(".standardNav").hide();
-	$("#menuToggle").click(function(){
-		$(".standardNav").slideToggle();
+	$(".nav-bar").hide();
+	$("#menu-toggle").click(function(){
+		$(".nav-bar").slideToggle();
 	});
 
 });

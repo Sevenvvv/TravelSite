@@ -10,15 +10,7 @@ body{
 
 /*Header with navigation bar*/
 
-header{
-	position: fixed;
-	width: 100%;
-	z-index: 5;
-	top: 0;
-}
-
-
-.standardContainer{
+.nav-container{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -27,6 +19,11 @@ header{
 	width: 100%;
 	padding: 10px;
 	background-color: #addbc0;
+
+	position: fixed;
+	width: 100%;
+	z-index: 5;
+	top: 0;
 }
 
 
@@ -50,7 +47,7 @@ header{
 
 
 
-.menuButton{
+.text-button{
 	color: white;
 	text-decoration: none;
 	font-size: 20px;
@@ -60,21 +57,18 @@ header{
 	border-radius: 3px;
 }
 
-.menuButton:hover{
+.text-button:hover{
 	background-color: black;
 	text-decoration: none;
 	color: white;
 }
 
 
-footer .menuButton {
-	font-size: 15;
-}
 
 /*Mobile navigation bar*/
 
 
-#menuToggle{
+#menu-toggle{
 	
 	padding: 10px;
 	cursor: pointer;
@@ -84,30 +78,22 @@ footer .menuButton {
 }
 
 
-#menuImg{
+#menu-img{
 	width: 30px;
 }
 
-/*.hiddenNav{ 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    padding: 20px; 
-
-} */
  
 
 /*Introduction section with picture and introduction text
 about the site*/
 
-.introContainer{
+.intro-container{
 	position: relative;
 	color: white;
 	top: 50px;
 }
 
-.introContainer h1{
+.intro-header{
 	position: absolute;
 	padding: 20px;
 	font-size: 30px;
@@ -120,7 +106,7 @@ about the site*/
 }
 
 
-.imageText {
+.intro-text {
 	position: absolute;
 	bottom: 0;
 	width: 40%;
@@ -132,34 +118,33 @@ about the site*/
 	background: rgba(0, 0, 0, 0.5);
 }
 
-.imageText h3{
-	font-size: 18;
+.intro-text h3{
+	font-size: 18px;
 	font-weight: normal;
 }
 
-.imageText p{
+.intro-text p{
 	font-size: 15;
 }
 
-.introContainer img{
+.intro-img, #dots-img, #close-img{
 	width: 100%;
-	
 }
 
 /*The labels/check buttons that displays when screen size
 decreases to mobile level*/
 
-#readMoreLabel{
+#readmore-label{
 	display: none;
 	cursor: pointer;
 	width: 30px;
 }
 
-#readMoreCheck{
+#read-check{
 	display: none;
 }
 
-#closeLabel{
+#readless-label{
 	display: none;
 	cursor: pointer;
 	width: 30px;
@@ -168,7 +153,7 @@ decreases to mobile level*/
 
 /*Photogallery*/
 
-.galleryFrame{
+.content-header{
 	background-color: black;
 	color: white;
 	width: 100%;
@@ -196,13 +181,13 @@ decreases to mobile level*/
 	opacity: 1;
 }
 
-.galleryImg{
+.gallery-img{
 	width: 280px;
 
 }
 
 /*Contact form*/
-.container{
+.forms-container{
 	padding-top: 60px;
 }
 
@@ -225,28 +210,26 @@ legend{
 	border-radius: 3px;
 }
 
-label{
-	margin:0;
-
-}
-
-.row{
+.forms-row{
 	margin: 0px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
-
-.row .desLabel{
-	font-weight: bolder;
-}
-
 
 .forms-column{
 	display: flex;
 	align-items: center;
 }
 
-select{
+label{
+	margin:0;
+}
+
+.description-label{
+	font-weight: bolder;
+}
+
+.input-field{
 	padding: 5px;
 	border-width: 1px;
     border-style: solid;
@@ -256,40 +239,18 @@ select{
 	margin-right: 5px;
 }
 
-textarea{
+
+#message{
 	width: 100%;
 	height: 150px;
-	padding: 10px 10px;
-	border-radius: 3px;
-	margin-left: 5px;
-	margin-right: 5px;
-
 }
 
 input[type=submit]{
 	border: none;
 }
 
-input[type=email]{
-	padding: 5px;
+#email{
 	width: 65%;
-	border-width: 1px;
-    border-style: solid;
-    border-color: rgb(169, 169, 169);
-    border-radius: 3px;
-    margin-left: 5px;
-	margin-right: 5px;
-}
-
-
-input[type=date]{
-	padding: 5px 5px;
-	border-width: 1px;
-    border-style: solid;
-    border-color: rgb(169, 169, 169);
-    border-radius: 3px;
-    margin-left: 5px;
-	margin-right: 5px;
 }
 
 input[type=checkbox]{
@@ -299,30 +260,40 @@ input[type=checkbox]{
 
 /*Footer*/
 
-.bottomBar {
+footer {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: space-between;
-	color: grey;
-	height: 100px;
+	justify-content: center;
+	background-color: black;
+	color: white;
+	font-size: 10px;
 	width: 100%;
+	height: 100px;
+	padding: 10px;
 }
 
-.attribute-section{
+.attribution-section{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding: 5px;
 }
 
-.attribute-section a{
+.attribution-section a{
+	color: white;
 	text-decoration: none;
+	
+}
+
+.attribution-section a:hover{
+	font-weight: bolder;
 }
 
 /*Large and extra large devices*/
 @media (min-width: 993px){
-	.standardNav {
+	.nav-bar {
 		display: flex !important;
 		flex-direction: row;
 		justify-content: center;
@@ -330,7 +301,7 @@ input[type=checkbox]{
 		padding:20px;
 	}
 
-	#menuToggle{
+	#menu-toggle{
 		display: none !important;
 	}
 }
@@ -340,7 +311,7 @@ Event when screen gets too small for navigation bar*/
 /*Standard menu bars disappears and mobile nav bar displays*/
 
 @media (max-width: 992px) { 
-    .standardNav { 
+    .nav-bar { 
         display: flex; 
     	flex-direction: column; 
     	justify-content: center; 
@@ -353,7 +324,7 @@ Event when screen gets too small for navigation bar*/
     	flex-basis: 50%;
     }
 
-    #menuToggle { 
+    #menu-toggle { 
         display: flex;
         flex-direction: row;
 		justify-content: flex-start;
@@ -363,11 +334,11 @@ Event when screen gets too small for navigation bar*/
 
 	/*from this screen size and down the font size are static
 	to still be readable*/
-	.introContainer .imageText h3{
+	.intro-text h3{
 		font-size: 16px;
 	} 
 
-	.introContainer .imageText p{
+	.intro-text p{
 		font-size: 12px;
 	} 
 
@@ -383,40 +354,40 @@ photos are too big to be put next to each orter
 and imageText overflows image*/
 
 @media (max-width: 600px){
-	.gallery a img{
+	.gallery-img{
 		width: 150px;
 	}
 
-	.introContainer h1{
-		font-size: 18px;
+	.intro-header{
+		font-size: 24px;
 	}
 
 	/*Makes image text disappear*/
-	.introContainer .imageText p{
+	.intro-text p{
 		display: none;
 	}
 
-	.introContainer .imageText h3{
+	.intro-text h3{
 		font-size: 12px;
 	}
 
 
 	/*Displays "read more"-checkbox*/
-	#readMoreLabel{
+	#readmore-label{
 		display: block;
 	}
 
 	/*Display image text when checkbox is clicked*/
-	#readMoreCheck:checked ~ p{
+	#read-check:checked ~ p{
 		display: block;
 	}
 
 	/*Changes checkbox icon to "cancel"*/
-	#readMoreCheck:checked ~ #readMoreLabel{
+	#read-check:checked ~ #readmore-label{
 		display: none;
 	}
 
-	#readMoreCheck:checked ~ #closeLabel{
+	#read-check:checked ~ #readless-label{
 		display: block;
 	}
 }
