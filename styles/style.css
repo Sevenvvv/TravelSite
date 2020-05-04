@@ -17,7 +17,6 @@ body{
 	justify-content: center;
 	flex-wrap: wrap;
 	width: 100%;
-	padding: 10px;
 	background-color: #addbc0;
 
 	position: fixed;
@@ -32,15 +31,14 @@ body{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: flex-end;
-	padding: 10px;
+	justify-content: center;
 }
 
 .logo a{
 	color: white;
 	text-shadow: 2px 2px 9px black;
 	font-size: 40px;
-	margin: 0;
+	margin: 10px;
 	text-decoration: none;
 }
 
@@ -95,7 +93,7 @@ about the site*/
 
 .intro-header{
 	position: absolute;
-	padding: 20px;
+	/*padding: 20px;*/
 	font-size: 30px;
 	font-weight: normal;
 	text-shadow: 2px 2px 5px black;
@@ -109,7 +107,7 @@ about the site*/
 .intro-text {
 	position: absolute;
 	bottom: 0;
-	width: 40%;
+	width: 50%;
 	padding: 20px;
 	display: flex;
 	flex-direction: column;
@@ -153,14 +151,16 @@ decreases to mobile level*/
 
 /*Photogallery*/
 
+
 .content-header{
 	background-color: black;
 	color: white;
 	width: 100%;
 	text-align: center;
-	padding-top: 70px;
 	padding-bottom: 10px;
+	padding-top: 20px;
 	font-size: 20px;
+	margin-top: 60px;
 }
 
 .gallery{
@@ -188,6 +188,7 @@ decreases to mobile level*/
 
 /*Contact form*/
 .forms-container{
+	margin-top: 10px;
 	padding-top: 60px;
 }
 
@@ -265,12 +266,13 @@ footer {
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+	flex-wrap: wrap;
 	background-color: black;
 	color: white;
 	font-size: 10px;
 	width: 100%;
-	height: 100px;
 	padding: 10px;
+
 }
 
 .attribution-section{
@@ -316,31 +318,21 @@ Event when screen gets too small for navigation bar*/
     	flex-direction: column; 
     	justify-content: center; 
     	align-items: center; 
-    	padding: 20px; 
     	flex-basis: 100%;
     } 
-
-    .logo {
-    	flex-basis: 50%;
-    }
 
     #menu-toggle { 
         display: flex;
         flex-direction: row;
 		justify-content: flex-start;
 		align-items: center;
-        flex-basis: 50%;
     }  
 
-	/*from this screen size and down the font size are static
-	to still be readable*/
-	.intro-text h3{
-		font-size: 16px;
-	} 
-
-	.intro-text p{
-		font-size: 12px;
-	} 
+    .intro-text {
+		position: relative;
+		width: 100%;
+		background-color: black;
+	}
 
 	fieldset{
 		width: auto;
@@ -354,21 +346,23 @@ photos are too big to be put next to each orter
 and imageText overflows image*/
 
 @media (max-width: 600px){
+	.date.col-12{
+		justify-content: flex-end;
+	}
+
 	.gallery-img{
 		width: 150px;
 	}
 
 	.intro-header{
-		font-size: 24px;
+		font-size: 20px;
 	}
+
+
 
 	/*Makes image text disappear*/
 	.intro-text p{
 		display: none;
-	}
-
-	.intro-text h3{
-		font-size: 12px;
 	}
 
 
