@@ -125,27 +125,8 @@ about the site*/
 	font-size: 15;
 }
 
-.intro-img, #dots-img, #close-img{
+.intro-img{
 	width: 100%;
-}
-
-/*The labels/check buttons that displays when screen size
-decreases to mobile level*/
-
-#readmore-label{
-	display: none;
-	cursor: pointer;
-	width: 30px;
-}
-
-#read-check{
-	display: none;
-}
-
-#readless-label{
-	display: none;
-	cursor: pointer;
-	width: 30px;
 }
 
 
@@ -259,6 +240,54 @@ input[type=checkbox]{
 	margin-right: 5px;
 }
 
+/*Content in Nature page*/
+
+.content-header.nature-header{
+	width: 60%;
+	margin-top: 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.content-container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 60px;
+	margin-bottom: 10px;
+}
+
+.nature-img{
+	width: 60%;
+	margin-top: 10px;
+}
+
+.read-more, .read-less{
+	padding: 0px;
+	border: none;
+	margin: 0px;
+	outline: none;
+}
+
+.read-more-img, .read-less-img{
+	width: 30px;
+}
+
+.nature-content{
+	background-color: black;
+	color: white;
+	margin-bottom: 60px;
+	width: 60%;
+	text-align: center;
+}
+
+#read-volcano, #read-geyser, #read-lagoon{
+	display: none;
+}
+
 /*Footer*/
 
 footer {
@@ -360,30 +389,6 @@ and imageText overflows image*/
 
 
 
-	/*Makes image text disappear*/
-	.intro-text p{
-		display: none;
-	}
-
-
-	/*Displays "read more"-checkbox*/
-	#readmore-label{
-		display: block;
-	}
-
-	/*Display image text when checkbox is clicked*/
-	#read-check:checked ~ p{
-		display: block;
-	}
-
-	/*Changes checkbox icon to "cancel"*/
-	#read-check:checked ~ #readmore-label{
-		display: none;
-	}
-
-	#read-check:checked ~ #readless-label{
-		display: block;
-	}
 }
 
 
