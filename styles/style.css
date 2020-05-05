@@ -1,5 +1,5 @@
 
-/*Most made with flexbox and media queries*/
+
 /*Standard is for large and extralarge devices*/
 
 body{
@@ -18,10 +18,8 @@ body{
 	flex-wrap: wrap;
 	width: 100%;
 	background-color: #addbc0;
-
 	position: fixed;
-	width: 100%;
-	z-index: 5;
+	z-index: 1;
 	top: 0;
 }
 
@@ -43,8 +41,6 @@ body{
 }
 
 
-
-
 .text-button{
 	color: white;
 	text-decoration: none;
@@ -63,18 +59,16 @@ a.current{
 }
 
 
+/*For mobile navigation bar*/
 
 
-/*Mobile navigation bar*/
-
-
-#menu-toggle{
-	
+#menu-toggle{	
 	padding: 10px;
 	cursor: pointer;
 	background-color: #addbc0;
 	border: none;
 	outline:none;
+	display: none;
 }
 
 
@@ -85,7 +79,7 @@ a.current{
  
 
 /*Introduction section with picture and introduction text
-about the site*/
+about current page*/
 
 .intro-container{
 	position: relative;
@@ -95,7 +89,6 @@ about the site*/
 
 .intro-header{
 	position: absolute;
-	/*padding: 20px;*/
 	font-size: 30px;
 	font-weight: normal;
 	text-shadow: 2px 2px 5px black;
@@ -120,11 +113,10 @@ about the site*/
 
 .intro-text h3{
 	font-size: 18px;
-	font-weight: normal;
 }
 
 .intro-text p{
-	font-size: 15;
+	font-size: 15px;
 }
 
 .intro-img{
@@ -132,7 +124,7 @@ about the site*/
 }
 
 
-/*Photogallery*/
+/*General header styling for content sections*/
 
 
 .content-header{
@@ -146,6 +138,8 @@ about the site*/
 	margin-top: 60px;
 }
 
+/*Photo gallery*/
+
 .gallery{
 	display: flex;
 	flex-direction: row;
@@ -155,21 +149,24 @@ about the site*/
 	flex-wrap: wrap;
 }
 
+.gallery-img{
+	width: 100%;
+}
+
 .gallery a{
 	padding: 2px;
 	opacity: 0.8;
+	flex-basis: 30%;
 }
 
 .gallery a:hover{
 	opacity: 1;
 }
 
-.gallery-img{
-	width: 280px;
 
-}
 
-/*Contact form*/
+/*Travel plan form*/
+
 .forms-container{
 	margin-top: 10px;
 	padding-top: 60px;
@@ -181,7 +178,6 @@ fieldset{
 	max-width: 700px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 20px;
 	background-color: #EBEDF0;
 }
 
@@ -196,13 +192,13 @@ legend{
 
 .forms-row{
 	margin: 0px;
-	padding-top: 10px;
-	padding-bottom: 10px;
 }
 
 .forms-column{
 	display: flex;
 	align-items: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 label{
@@ -244,7 +240,7 @@ input[type=checkbox]{
 
 /*Content in Nature page*/
 
-.content-header.nature-header{
+.nature-header{
 	width: 60%;
 	margin-top: 0px;
 	display: flex;
@@ -325,7 +321,11 @@ footer {
 	font-weight: bolder;
 }
 
-/*Large and extra large devices*/
+/*Large and extra large devices
+- addition to standard css-code
+  in jQuery nav-bar is hidden for the slidetoggle-function to work correctly,
+  but in this view nav-bar has to be shown*/
+
 @media (min-width: 993px){
 	.nav-bar {
 		display: flex !important;
@@ -334,15 +334,12 @@ footer {
 		align-items: center;
 		padding:20px;
 	}
-
-	#menu-toggle{
-		display: none !important;
-	}
 }
 
-/*Small and Medium devices
-Event when screen gets too small for navigation bar*/
-/*Standard menu bars disappears and mobile nav bar displays*/
+/*Medium devices and down
+- Screen gets too small for standard navigation bar
+- Intro text moves underneath the intro image
+- Responsivness for gallery, form and other content*/
 
 @media (max-width: 992px) { 
     .nav-bar { 
@@ -376,12 +373,18 @@ Event when screen gets too small for navigation bar*/
 		width: 80%;
 	}
 
+	.gallery a{
+		flex-basis: auto;
+	}
+
+	.gallery-img{
+		width: 280px;
+	}
+
 } 
 
 /*Extra small devices
-Event when screen decreases to the level where 
-photos are too big to be put next to each orter
-and imageText overflows image*/
+- Responsivness for gallery, form and other content*/
 
 @media (max-width: 600px){
 	.date.col-12{
@@ -401,9 +404,6 @@ and imageText overflows image*/
 	.nature-content{
 		width: 90%;
 	}
-
-
-
 }
 
 
