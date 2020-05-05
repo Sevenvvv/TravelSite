@@ -25,151 +25,158 @@
 		<meta name="author" content="Ulrika Höök">
 
 	</head>
-<body>
 
-	<header class="nav-container">
-		<div class="logo">
-			<a href="index.html">ICELAND</a>
-			<button id="menu-toggle"><img src="images/menu.png" id ="menu-img"/></button>
-		</div>
-		
-		
-		<nav class="nav-bar">
-			<a class = "text-button" href="nature.html">NATURE</a>
-			<a class = "text-button" href="history.html">HISTORY</a>
-			<a class = "text-button" href="culture.html">CULTURE</a>
-			<a class = "text-button" href="places.html">PLACES TO VISIT</a>
-			<a class = "text-button" href="travelplan.html">TRAVEL PLAN</a>
-		</nav>
-	</header>
+	<body>
 
-	<section class="intro-container">
-			<img class="intro-img" src="images/mountain small.jpg" alt="mountain" title="Mountain by Norris Niman" />
-			<h1 class="intro-header">TRAVEL PLAN</h1>
-			<div class="intro-text">
-				<h3>Do you think planning a trip can be difficult?</h3>
-				<p>Don't worry! We'll help you!<br/>Fill out the form below and we will send you a custom-made Iceland travel plan.</p>	
+		<header class="nav-container">
+			<div class="logo">
+				<a href="index.html">ICELAND</a>
+				<button id="menu-toggle">
+					<img src="images/menu.png" id ="menu-img"/>
+				</button>
 			</div>
-	</section>
+			<nav class="nav-bar">
+				<a class = "text-button" href="nature.html">NATURE</a>
+				<a class = "text-button" href="history.html">HISTORY</a>
+				<a class = "text-button" href="culture.html">CULTURE</a>
+				<a class = "text-button" href="places.html">PLACES TO VISIT</a>
+				<a class = "text-button current" href="travelplan.html">TRAVEL PLAN</a>
+			</nav>
+		</header>
 
-	<section class="container forms-container">
-		<fieldset>
-			<legend>Your trip</legend>
-			<form method="post">
-
-				<div class="row forms-row">
-					<div class="col-md-3 col-12 forms-column">
-						<label class="description-label">Date of travel</label>
-					</div>
-					<div class="col-md-5 col-sm-6 col-12 forms-column date">
-						<label for="date-from">from </label>
-						<input type="date" id="date-from" class="input-field">
-					</div>
-					<div class="col-md-4 col-sm-6 col-12 forms-column date">
-						<label for="date-to">to </label>
-						<input type="date" id="date-to" class="input-field">
-					</div>
+		<section class="intro-container">
+				<img class="intro-img" src="images/mountain small.jpg" alt="mountain" title="Mountain by Norris Niman" />
+				<h1 class="intro-header">TRAVEL PLAN</h1>
+				<div class="intro-text">
+					<h3>Do you think planning a trip can be difficult?</h3>
+					<p>Don't worry! We'll help you!<br/>Fill out the form below and we will send you a custom-made Iceland travel plan.</p>	
 				</div>
+		</section>
 
-				<div class="row forms-row">
-					<div class="col-12 forms-column">
-						<label  class="description-label">Intrested in activities within</label>
-					</div>
-				</div>
+		<section class="container forms-container">
+			<fieldset>
+				<legend>Your trip</legend>
+				<form method="post">
 
-				<div class="row forms-row">
-					<div class="col-md-3 col-6 forms-column">
-						<input type="checkbox" id="nature-check">
-						<label for="nature-check"> Nature</label>
+					<div class="row forms-row">
+						<div class="col-md-3 col-12 forms-column">
+							<label class="description-label">Date of travel</label>
+						</div>
+						<div class="col-md-5 col-sm-6 col-12 forms-column date">
+							<label for="date-from">from </label>
+							<input type="date" id="date-from" class="input-field">
+						</div>
+						<div class="col-md-4 col-sm-6 col-12 forms-column date">
+							<label for="date-to">to </label>
+							<input type="date" id="date-to" class="input-field">
+						</div>
 					</div>
-					<div class="col-md-3 col-6 forms-column">
-						<input type="checkbox" id="history-check">
-						<label for="history-check"> History</label>
-					</div>
-					<div class="col-md-3 col-6 forms-column">	
-						<input type="checkbox" id="culture-check">
-						<label for="culture-check"> Culture</label>
-					</div>
-					<div class="col-md-3 col-6 forms-column">
-						<input type="checkbox" id="food-check">
-						<label for="food-check"> Food</label>
-					</div>
-				</div>
 
-				<div class="row forms-row">
-					<div class="col-md-6 col-12 forms-column">
-						<label class="description-label">No. of people traveling</label>
+					<div class="row forms-row">
+						<div class="col-12 forms-column">
+							<label  class="description-label">Intrested in activities within</label>
+						</div>
 					</div>
-					<div class="col-md-3 col-6 forms-column">
-						<label for="adults">Adults</label>
-						<select id="adults" class="input-field">
-							<option>1</option>
-							<option selected>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-							<option>6</option>
-						</select>
-					</div>
-					<div class="col-md-3 col-6 forms-column">
-						<label for="kids">Children</label>
-						<select id="kids" class="input-field">
-							<option selected>0</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>						
-						</select>
-					</div>
-				</div>
-					
-				<div class="row forms-row">
-					<div class="col-md-6 col-12 forms-column">
-						<label  class="description-label">Preference of accommodation</label>
-					</div>
-					<div class="col-md-3 col-6 forms-column">
-						<input type="checkbox" id="appartment-check">
-						<label for="appartmentCheck"> Appartment</label>
-					</div>
-					<div class="col-md-3 col-6 forms-column">
-						<input type="checkbox" id="hotel-check">
-						<label for="hotelCheck"> Hotel</label>
-					</div>
-				</div>
 
-				<div class="row forms-row">
-					<div class="col-md-4 col-12">
-						<label for="message"  class="description-label">Other wishes or preferences </label>
+					<div class="row forms-row">
+						<div class="col-md-3 col-6 forms-column">
+							<input type="checkbox" id="nature-check">
+							<label for="nature-check"> Nature</label>
+						</div>
+						<div class="col-md-3 col-6 forms-column">
+							<input type="checkbox" id="history-check">
+							<label for="history-check"> History</label>
+						</div>
+						<div class="col-md-3 col-6 forms-column">	
+							<input type="checkbox" id="culture-check">
+							<label for="culture-check"> Culture</label>
+						</div>
+						<div class="col-md-3 col-6 forms-column">
+							<input type="checkbox" id="food-check">
+							<label for="food-check"> Food</label>
+						</div>
 					</div>
-					<div class="col-md-8 col-12">
-						<textarea placeholder="Write here..." id="message" class="input-field"></textarea>
-					</div>
-				</div>
 
-				<div class="row forms-row">
-					<div class="col-md-10 col-12 forms-column">
-						<label  class="description-label">Your e-mail</label>
-						<input type="email" id="email" placeholder="example@icelandrules.com" class="input-field">
-					</div> 
-					<div class="col-md-2 col-12 forms-column">
-						<input type="submit" value="SEND" class="text-button">
+					<div class="row forms-row">
+						<div class="col-md-6 col-12 forms-column">
+							<label class="description-label">No. of people traveling</label>
+						</div>
+						<div class="col-md-3 col-6 forms-column">
+							<label for="adults">Adults</label>
+							<select id="adults" class="input-field">
+								<option>1</option>
+								<option selected>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+							</select>
+						</div>
+						<div class="col-md-3 col-6 forms-column">
+							<label for="kids">Children</label>
+							<select id="kids" class="input-field">
+								<option selected>0</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>						
+							</select>
+						</div>
 					</div>
-				</div>
-			</form>
-		</fieldset>
-	</section>
+						
+					<div class="row forms-row">
+						<div class="col-md-6 col-12 forms-column">
+							<label  class="description-label">Preference of accommodation</label>
+						</div>
+						<div class="col-md-3 col-6 forms-column">
+							<input type="checkbox" id="appartment-check">
+							<label for="appartmentCheck">Appartment</label>
+						</div>
+						<div class="col-md-3 col-6 forms-column">
+							<input type="checkbox" id="hotel-check">
+							<label for="hotelCheck">Hotel</label>
+						</div>
+					</div>
 
-	<footer>					
-			<div class="attribution-section">
-				Menu icon made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect" target="_blank">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a>
-			</div>
-			<div class="attribution-section">
-				Favicon and other icons by <a href="https://www.icons8.com/" title="Icons8" target="_blank">www.icons8.com</a>
-			</div>
-			<div class="attribution-section">
-				Photos from <a href="https://www.unsplash.com/" title="Unsplash" target="_blank">www.unsplash.com</a>
-			</div>
-	</footer>
-</body>
+					<div class="row forms-row">
+						<div class="col-md-4 col-12">
+							<label for="message" class="description-label">Other wishes or preferences</label>
+						</div>
+						<div class="col-md-8 col-12">
+							<textarea placeholder="Write here..." id="message" class="input-field"></textarea>
+						</div>
+					</div>
+
+					<div class="row forms-row">
+						<div class="col-md-10 col-12 forms-column">
+							<label  class="description-label">Your e-mail</label>
+							<input type="email" id="email" placeholder="example@icelandrules.com" class="input-field">
+						</div> 
+						<div class="col-md-2 col-12 forms-column">
+							<input type="submit" value="SEND" class="text-button">
+						</div>
+					</div>
+				</form>
+			</fieldset>
+		</section>
+
+		<footer>					
+				<div class="attribution-section">
+					Menu icon made by 
+					<a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect" target="_blank">Pixel perfect</a> 
+					from 
+					<a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a>
+				</div>
+				<div class="attribution-section">
+					Favicon and other icons by 
+					<a href="https://www.icons8.com/" title="Icons8" target="_blank">www.icons8.com</a>
+				</div>
+				<div class="attribution-section">
+					Photos from 
+					<a href="https://www.unsplash.com/" title="Unsplash" target="_blank">www.unsplash.com</a>
+				</div>
+		</footer>
+
+	</body>
 </html>
