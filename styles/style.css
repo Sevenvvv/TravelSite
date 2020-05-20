@@ -219,7 +219,6 @@ label{
 	margin-right: 5px;
 }
 
-
 #message{
 	width: 100%;
 	height: 150px;
@@ -327,7 +326,7 @@ footer {
   in jQuery nav-bar is hidden for the slidetoggle-function to work correctly,
   but in this view nav-bar has to be shown*/
 
-@media (min-width: 993px){
+@media screen and (min-width: 993px){
 	.nav-bar {
 		display: flex !important;
 		flex-direction: row;
@@ -342,7 +341,7 @@ footer {
 - Intro text moves underneath the intro image
 - Responsivness for gallery, form and other content*/
 
-@media (max-width: 992px) { 
+@media screen and (max-width: 992px) { 
     .nav-bar { 
         display: flex; 
     	flex-direction: column; 
@@ -387,7 +386,7 @@ footer {
 /*Extra small devices
 - Responsivness for gallery, form and other content*/
 
-@media (max-width: 600px){
+@media screen and (max-width: 600px){
 	.date.col-12{
 		justify-content: flex-end;
 	}
