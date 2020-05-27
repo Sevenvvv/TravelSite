@@ -14,13 +14,14 @@ body{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap;
+	justify-content: space-around;
 	width: 100%;
 	background-color: #addbc0;
 	position: fixed;
 	z-index: 1;
 	top: 0;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 
@@ -30,6 +31,7 @@ body{
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+	flex-basis: 10%;
 }
 
 .logo a{
@@ -38,6 +40,23 @@ body{
 	font-size: 40px;
 	margin: 10px;
 	text-decoration: none;
+}
+
+.weather{
+	flex-basis: 10%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+}
+
+.weather p{
+	margin:0;
+}
+
+#temp{
+	font-weight: bold;
+
 }
 
 
@@ -49,6 +68,7 @@ body{
 	background-color: #6bcf93;
 	margin: 5px;
 	border-radius: 3px;
+	border:none;
 }
 
 .text-button:hover, 
@@ -163,13 +183,58 @@ about current page*/
 	opacity: 1;
 }
 
+/*Wish list section*/
+#wish-container{
+	margin-top: 10px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 90%;
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+#activities, #my-activities{
+	background-color:  #EBEDF0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	flex-basis: 40%;
+	padding: 20px;
+}
+
+.activity-item{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.activity-item:nth-child(even){
+	background-color: #e3e5e8;
+}
+
+.activity-item p{
+	margin: 0;
+	font-weight: bold;
+}
+
+button:disabled{
+	background-color: black;
+	cursor: none;
+}
+
 
 
 /*Travel plan form*/
 
 .forms-container{
 	margin-top: 10px;
-	padding-top: 60px;
 }
 
 fieldset{
@@ -182,12 +247,13 @@ fieldset{
 }
 
 legend{
-	width: 30%;
-	font-size: 20px;
+	width: 50%;
+	font-size: 18px;
 	text-align: center;
 	background-color: black;
 	color: white;
 	border-radius: 3px;
+	padding: 5px;
 }
 
 .forms-row{
@@ -333,7 +399,9 @@ footer {
 		justify-content: center;
 		align-items: center;
 		padding:20px;
+		flex-basis: 75%;
 	}
+
 }
 
 /*Medium devices and down
@@ -342,13 +410,21 @@ footer {
 - Responsivness for gallery, form and other content*/
 
 @media screen and (max-width: 992px) { 
-    .nav-bar { 
+	.nav-container{
+		flex-wrap: wrap;
+	}
+	
+	.nav-bar { 
         display: flex; 
     	flex-direction: column; 
     	justify-content: center; 
     	align-items: center; 
     	flex-basis: 100%;
-    } 
+	} 
+	
+	.logo{
+		flex-basis: 90%;
+	}
 
     #menu-toggle { 
         display: flex;
@@ -379,6 +455,10 @@ footer {
 
 	.gallery-img{
 		width: 280px;
+	}
+
+	#activities, #my-activities{
+		flex-basis: 90%;
 	}
 
 } 
