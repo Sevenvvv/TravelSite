@@ -44,20 +44,26 @@ body{
 
 .weather{
 	flex-basis: 10%;
-	display: flex;
+	display: none;
 	flex-direction: column;
 	align-items: center;
-	
+	animation-name: fade;
+	animation-duration: 1s;
 }
 
 .weather p{
 	margin:0;
 }
 
-#temp{
+.weather div{
 	font-weight: bold;
 
 }
+
+@keyframes fade {
+	from {opacity: .4} 
+	to {opacity: 1}
+  }
 
 
 .text-button{

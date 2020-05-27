@@ -1,5 +1,26 @@
 const activityList = document.getElementById("activities");
 const wishList = document.getElementById("my-activities");
+let slideIndex = 0;
+function showSlides(){
+    let slides = document.getElementsByClassName('weather');
+
+    for(let i = 0; i < slides.length; i++){
+        slides[i].style.display = 'none';
+    }
+
+    slides[slideIndex].style.display = 'flex';
+
+    slideIndex++;
+
+    if(slideIndex == slides.length){slideIndex=0;}
+
+    setTimeout(showSlides, 3000);
+}
+
+showSlides();
+
+
+
 
 //Real time listener som hämtar från firestore där Islands-aktiviteter lagras
 //Skickar tillagda dokument till renderActivity()
@@ -155,81 +176,93 @@ promise.then(function(){
 //genom switch-case-sats. Lägger sen till denna i HTML DOM.
 function addWeatherData(APIdata){
 
-    let weatherData = APIdata.timeSeries[0].parameters;
-    let temp;
-    let wsymb;
-    for(let i = 0; i < weatherData.length; i++){
-        if(weatherData[i].name == "t"){
-            temp = weatherData[i].values[0] + ' C';
-        } else if(weatherData[i].name == "Wsymb2"){
-            wsymb = weatherData[i].values[0];
+    setTags(0, 'wsymb1', 'temp1');
+    setTags(24, 'wsymb2', 'temp2');
+
+    function setTags(hourIndex, wsymbID, tempID){
+        let weatherData = APIdata.timeSeries[hourIndex].parameters;
+        console.log(weatherData);
+        let temp;
+        let wsymb;
+        for(let i = 0; i < weatherData.length; i++){
+            if(weatherData[i].name == "t"){
+                temp = weatherData[i].values[0] + ' C';
+            } else if(weatherData[i].name == "Wsymb2"){
+                wsymb = weatherData[i].values[0];
+            }
         }
+        console.log(wsymb);
+        console.log(temp);
+        console.log(tempID);
+        console.log(wsymbID);
+        console.log(hourIndex);
+    
+        var src = "images/";
+    
+        switch(wsymb){
+            case 1: //sun
+                src +="sun.png";
+                break;
+            case 2:
+            case 3:
+            case 4:
+            case 5://partly cloudy day
+                src +="partlycloudy.png";
+                break;
+            case 6: //clouds
+                src +="clouds.png";
+                break;
+            case 7: //dust
+                src +="dust.png";
+                break;
+            case 8:
+            case 9:
+            case 10: // rain cloud (sun and two drops)
+                src +="sunrain.png";
+                break;
+            case 11: // stormy weather
+                src +="stormy.png";
+                break;
+            case 12:
+            case 13:
+            case 14:
+            case 15:
+            case 16:
+            case 17: // Snowy sunny day
+                src +="snowsun.png";
+                break;
+            case 18: //rain cloud (one drop)
+                src +="raincloud.png";
+                break;
+            case 19: //light rain
+                src +="lightrain.png";
+                break;
+            case 20: //moderate rain
+                src +="moderaterain.png";
+                break;
+            case 21: //storm
+                src +="storm.png";
+                break;
+            case 22:
+            case 23:
+            case 24: //sleet
+                src +="sleet.png";
+                break;
+            case 25: //light snow
+                src +="lightsnow.png";
+                break;
+            case 26:
+            case 27: //snow
+                src +="snow.png";
+                break;
+        }
+        console.log(document.getElementById(wsymbID));
+        console.log(document.getElementById(tempID));
+        document.getElementById(wsymbID).setAttribute("src", src);
+        document.getElementById(tempID).textContent = temp;
     }
-    document.getElementById("temp").textContent = temp;
-
-    console.log(wsymb);
-    console.log(temp);
 
 
-    var src = "images/";
-
-    switch(wsymb){
-        case 1: //sun
-            src +="sun.png";
-            break;
-        case 2:
-        case 3:
-        case 4:
-        case 5://partly cloudy day
-            src +="partlycloudy.png";
-            break;
-        case 6: //clouds
-            src +="clouds.png";
-            break;
-        case 7: //dust
-            src +="dust.png";
-            break;
-        case 8:
-        case 9:
-        case 10: // rain cloud (sun and two drops)
-            src +="sunrain.png";
-            break;
-        case 11: // stormy weather
-            src +="stormy.png";
-            break;
-        case 12:
-        case 13:
-        case 14:
-        case 15:
-        case 16:
-        case 17: // Snowy sunny day
-            src +="snowsun.png";
-            break;
-        case 18: //rain cloud (one drop)
-            src +="raincloud.png";
-            break;
-        case 19: //light rain
-            src +="lightrain.png";
-            break;
-        case 20: //moderate rain
-            src +="moderaterain.png";
-            break;
-        case 21: //storm
-            src +="storm.png";
-            break;
-        case 22:
-        case 23:
-        case 24: //sleet
-            src +="sleet.png";
-            break;
-        case 25: //light snow
-            src +="lightsnow.png";
-            break;
-        case 26:
-        case 27: //snow
-            src +="snow.png";
-            break;
-    }
-
-    document.getElementById("wsymb").setAttribute("src", src);
+    
 }
+
