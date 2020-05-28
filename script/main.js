@@ -181,9 +181,10 @@ function addWeatherData(APIdata){
 
     setTags(0, 'wsymb1', 'temp1');
     setTags(24, 'wsymb2', 'temp2');
+    setTags(70, 'wsymb3', 'temp3');
 
-    function setTags(hourIndex, wsymbID, tempID){
-        let weatherData = APIdata.timeSeries[hourIndex].parameters;
+    function setTags(timeIndex, wsymbID, tempID){
+        let weatherData = APIdata.timeSeries[timeIndex].parameters;
         console.log(weatherData);
         let temp;
         let wsymb;
@@ -200,7 +201,7 @@ function addWeatherData(APIdata){
         //Only for control
         console.log(tempID);
         console.log(wsymbID);
-        console.log(hourIndex);
+        console.log(timeIndex);
     
         var src = "images/";
     
