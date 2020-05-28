@@ -1,7 +1,17 @@
+//Get element which will hold list of activities
 const activityList = document.getElementById("activities");
+
+//Get element which will hold wishlist
 const wishList = document.getElementById("my-activities");
+
+//Start value for variable that controls weather slides
 let slideIndex = 0;
-function showSlides(){
+
+/*IIFE that starts weatherslides to roll.
+  Displays one weather element and hides the rest.
+  Ends by making the same function be called every third sec
+  which creates a slideshow.*/
+(function showSlides(){
     let slides = document.getElementsByClassName('weather');
 
     for(let i = 0; i < slides.length; i++){
@@ -12,21 +22,16 @@ function showSlides(){
 
     slideIndex++;
 
-    if(slideIndex == slides.length){slideIndex=0;}
+    slideIndex = (slideIndex == slides.length) ? slideIndex = 0 : slideIndex;
+    //if(slideIndex == slides.length){slideIndex=0;}
 
     setTimeout(showSlides, 3000);
-}
+})();
 
-showSlides();
-
-
-
-
-//Real time listener som hämtar från firestore där Islands-aktiviteter lagras
-//Skickar tillagda dokument till renderActivity()
-//Tar bort element från DOM för de dokument som tagits bort från db,
-//tar även bort motsvarande dokument från wishlist-db
-//Avslutar med att skicka förändrat dokuemnt till checkTwins()
+/*Real time listener, gets snapshot from firestore collection 'activities'.
+  Sends added documents to function renderActivity.
+  Removed documents are removed from DOM, and the twin document in
+  wishlist-collection gets deleted*/
 db.collection('activities').onSnapshot((snapshot)=>{
     let changes = snapshot.docChanges();
     changes.forEach(change => {
@@ -40,10 +45,10 @@ db.collection('activities').onSnapshot((snapshot)=>{
     });
 });
 
-//Real time listener som hämtar från firestore där önskelistan finns lagrad
-//Skickar tillagda dokument till renderWishList()
-//Tar bort element från DOM för de dokument som tagits bort från db
-//Avslutar med att skicka förändrat dokument till checkTwins()
+/*Real time listener, gets snapshot from firestore collection 'wishlist'
+  Sends added documents to function renderWishList.
+  Removed documents are removed from DOM
+  Function checkTwins is called for both added and removed documents*/
 db.collection('wishlist').onSnapshot((snapshot)=>{
     let changes = snapshot.docChanges();
     changes.forEach(change => {
@@ -57,11 +62,10 @@ db.collection('wishlist').onSnapshot((snapshot)=>{
     });
 });
 
-//Kollar om det finns fler element i DOM som har samma klass-namn 
-//(data-bas-id) som det element som hör till det medskickade dokumentet
-//Hittas en "tvilling" innebär det att elementet i aktivitets-formuläret 
-//ska bli disabled, eftersom man inte ska kunna lägga till fler aktiviteter
-//av samma i sin önskelista
+/*Is called every time a change is made i wishlist-collection
+  Checks to see if there are more documents with the same class name (database-id).
+  If a twin is found, the twin in the activity-list is disabled,
+  to make sure one activity can neever be added to wishlist more than once. */
 function checkTwins(doc){
     console.log(activityList.querySelector('.A'+doc.id));
     
@@ -78,10 +82,9 @@ function checkTwins(doc){
     }
 } 
 
-
-//Lägger till nya dokument från databasen till HTML DOM
-//Lägger eventlistener på "lägga-till-i-önskelista-knapp"
-//där en kopia av det klickade dokumentet hamnar i databasen för önskelistan
+/*Adds new documents from collection 'activities' to DOM
+  Adds event listener to addButton, which makes a copy of the
+  clicked document, and puts it in collection wishlist */
 function renderActivity(doc){
 
     let div = document.createElement('div');
@@ -113,9 +116,9 @@ function renderActivity(doc){
     });
 }
 
-//Lägger till nya dokument från databasen till HTML DOM
-//Lägger eventlistener på "ta-bort-från-önskelista-knapp"
-//som tar bort valt dokument från databasen
+/*Adds new documents from collection 'wishlist' to DOM.
+  Adds event listener to removeButton, which deletes the clicked
+  document from collection wishlist */
 function renderWishlist(doc){
     let div = document.createElement('div');
     div.classList.add('A'+ doc.id, 'activity-item');
@@ -138,9 +141,9 @@ function renderWishlist(doc){
     });
 }
 
-
-//Skapar asynchronous request för att hämta data från väder-API
-//Kollar status på request för att kunna se processen i konsolen 
+/*Creates asyncronous request to get data from weather API
+  onreadyStatechange checks the status on the request and logs it to the console,
+  and calls resolve or reject */
 var promise = new Promise((resolve, reject) => {
     request = new XMLHttpRequest();
     request.open("get", "https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/16.158/lat/58.5812/data.json");
@@ -160,8 +163,8 @@ var promise = new Promise((resolve, reject) => {
     
 });
 
-//Skickar parsad JSON-data till funktion addWeatherData
-//skriver ut Error i konsol om requesten stöter på error
+/*Sends parsed JSON data to function addWeatherData if request was sucessful,
+  or logs error message to the console on failed request */
 promise.then(function(){
         let APIdata = JSON.parse(request.responseText);
         console.log(APIdata);
@@ -171,9 +174,9 @@ promise.then(function(){
         console.log("Error");
 });
 
-//Plockar ut nuvarande temperatur från API och lägger till i HTML DOM
-//Plockar ut nuvarande väderbeskrivning från API och lägger till matchande vädersymbol 
-//genom switch-case-sats. Lägger sen till denna i HTML DOM.
+/*Read temperature-data: temp now and temp in 24 h. Adds it to DOM
+  Read weather description: now and in 24 h. Weather despriction (a number)
+  is matched with a symbol by switch case, and added to DOM */
 function addWeatherData(APIdata){
 
     setTags(0, 'wsymb1', 'temp1');
@@ -193,6 +196,8 @@ function addWeatherData(APIdata){
         }
         console.log(wsymb);
         console.log(temp);
+
+        //Only for control
         console.log(tempID);
         console.log(wsymbID);
         console.log(hourIndex);
@@ -256,8 +261,11 @@ function addWeatherData(APIdata){
                 src +="snow.png";
                 break;
         }
+        
+        //Only for control
         console.log(document.getElementById(wsymbID));
         console.log(document.getElementById(tempID));
+
         document.getElementById(wsymbID).setAttribute("src", src);
         document.getElementById(tempID).textContent = temp;
     }
