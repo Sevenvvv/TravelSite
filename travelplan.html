@@ -15,8 +15,14 @@
 		<!-- Latest compiled JavaScript -->​
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+
+	    <!--The core firestore service-->
+		<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+
+
 		<link rel="stylesheet" type = "text/css" href="styles/style.css">
-		<script src="jquery.js"></script>
 		<link rel="icon" href ="images/favicon.png" type="image/png">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,6 +36,7 @@
 
 		<!--Header with navbar-->
 		<header class="nav-container">
+			
 			<div class="logo">
 				<a href="index.html">ICELAND</a>
 				<button id="menu-toggle">
@@ -43,6 +50,16 @@
 				<a class = "text-button" href="places.html">PLACES TO VISIT</a>
 				<a class = "text-button current" href="travelplan.html">TRAVEL PLAN</a>
 			</nav>
+			<div class="weather">
+				<p>Today</p>
+				<img id="wsymb1"/>
+				<div id="temp1"></div>
+			</div>
+			<div class="weather">
+				<p>Tomorrow</p>
+				<img id="wsymb2"/>
+				<div id="temp2"></div>
+			</div>
 		</header>
 
 		<!--Intro picture and text-->
@@ -51,118 +68,143 @@
 				<h1 class="intro-header">TRAVEL PLAN</h1>
 				<div class="intro-text">
 					<h3>Do you think planning a trip can be difficult?</h3>
-					<p>Don't worry! We'll help you!<br/>Fill out the form below and we will send you a custom-made Iceland travel plan.</p>	
+					<p>Don't worry! We'll help you!<br/>Make your own wish list using our travel plan tool or fill out the form below and we will send you a custom-made Iceland travel plan.</p>	
 				</div>
 		</section>
 
-		<!--Form-->
-		<section class="container forms-container">
-			<fieldset>
-				<legend>Your trip</legend>
-				<form method="post">
-
-					<div class="row forms-row">
-						<div class="col-md-3 col-12 forms-column">
-							<label class="description-label">Date of travel</label>
-						</div>
-						<div class="col-md-5 col-sm-6 col-12 forms-column date">
-							<label for="date-from">from </label>
-							<input type="date" id="date-from" class="input-field">
-						</div>
-						<div class="col-md-4 col-sm-6 col-12 forms-column date">
-							<label for="date-to">to </label>
-							<input type="date" id="date-to" class="input-field">
-						</div>
-					</div>
-
-					<div class="row forms-row">
-						<div class="col-12 forms-column">
-							<label  class="description-label">Intrested in activities within</label>
-						</div>
-					</div>
-
-					<div class="row forms-row">
-						<div class="col-md-3 col-6 forms-column">
-							<input type="checkbox" id="nature-check">
-							<label for="nature-check"> Nature</label>
-						</div>
-						<div class="col-md-3 col-6 forms-column">
-							<input type="checkbox" id="history-check">
-							<label for="history-check"> History</label>
-						</div>
-						<div class="col-md-3 col-6 forms-column">	
-							<input type="checkbox" id="culture-check">
-							<label for="culture-check"> Culture</label>
-						</div>
-						<div class="col-md-3 col-6 forms-column">
-							<input type="checkbox" id="food-check">
-							<label for="food-check"> Food</label>
-						</div>
-					</div>
-
-					<div class="row forms-row">
-						<div class="col-md-6 col-12 forms-column">
-							<label class="description-label">No. of people traveling</label>
-						</div>
-						<div class="col-md-3 col-6 forms-column">
-							<label for="adults">Adults</label>
-							<select id="adults" class="input-field">
-								<option>1</option>
-								<option selected>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-								<option>6</option>
-							</select>
-						</div>
-						<div class="col-md-3 col-6 forms-column">
-							<label for="kids">Children</label>
-							<select id="kids" class="input-field">
-								<option selected>0</option>
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>						
-							</select>
-						</div>
-					</div>
-						
-					<div class="row forms-row">
-						<div class="col-md-6 col-12 forms-column">
-							<label  class="description-label">Preference of accommodation</label>
-						</div>
-						<div class="col-md-3 col-6 forms-column">
-							<input type="checkbox" id="appartment-check">
-							<label for="appartmentCheck">Appartment</label>
-						</div>
-						<div class="col-md-3 col-6 forms-column">
-							<input type="checkbox" id="hotel-check">
-							<label for="hotelCheck">Hotel</label>
-						</div>
-					</div>
-
-					<div class="row forms-row">
-						<div class="col-md-4 col-12">
-							<label for="message" class="description-label">Other wishes or preferences</label>
-						</div>
-						<div class="col-md-8 col-12">
-							<textarea placeholder="Write here..." id="message" class="input-field"></textarea>
-						</div>
-					</div>
-
-					<div class="row forms-row">
-						<div class="col-md-10 col-12 forms-column">
-							<label  class="description-label">Your e-mail</label>
-							<input type="email" id="email" placeholder="example@icelandrules.com" class="input-field">
-						</div> 
-						<div class="col-md-2 col-12 forms-column">
-							<input type="submit" value="SEND" class="text-button">
-						</div>
-					</div>
-				</form>
-			</fieldset>
+		<section>
+			<div class = "content-header">
+				Create wishlist
+			</div>
+			<div id = "wish-container">
+				<fieldset id = "activities">
+					<legend>Iceland experiences</legend>
+					<!--<div class="activity-item"><p>Hej</p><button class="text-button">Klar</button></div>
+					<div class="activity-item"><p>Hej</p><button class="text-button">Klar</button></div>-->
+				</fieldset>
+				<fieldset id = "my-activities">
+					<legend>My wish list</legend>
+					<!--<div class="activity-item"><p>Hej</p><button class="text-button">Klar</button></div>
+					<div class="activity-item"><p>Hej</p><button class="text-button">Klar</button></div>-->
+				</fieldset>
+			</div>
 		</section>
+
+		<!--Form-->
+		<section>
+			<div class ="content-header">
+				Custom made travel plan
+			</div>
+			<div class = "container forms-container">
+				<fieldset>
+					<legend>Your trip</legend>
+					<form method="post">
+
+						<div class="row forms-row">
+							<div class="col-md-3 col-12 forms-column">
+								<label class="description-label">Date of travel</label>
+							</div>
+							<div class="col-md-5 col-sm-6 col-12 forms-column date">
+								<label for="date-from">from </label>
+								<input type="date" id="date-from" class="input-field">
+							</div>
+							<div class="col-md-4 col-sm-6 col-12 forms-column date">
+								<label for="date-to">to </label>
+								<input type="date" id="date-to" class="input-field">
+							</div>
+						</div>
+
+						<div class="row forms-row">
+							<div class="col-12 forms-column">
+								<label  class="description-label">Intrested in activities within</label>
+							</div>
+						</div>
+					
+						<div class="row forms-row">
+							<div class="col-md-3 col-6 forms-column">
+								<input type="checkbox" id="nature-check">
+								<label for="nature-check"> Nature</label>
+							</div>
+							<div class="col-md-3 col-6 forms-column">
+								<input type="checkbox" id="history-check">
+								<label for="history-check"> History</label>
+							</div>
+							<div class="col-md-3 col-6 forms-column">	
+								<input type="checkbox" id="culture-check">
+								<label for="culture-check"> Culture</label>
+							</div>
+							<div class="col-md-3 col-6 forms-column">
+								<input type="checkbox" id="food-check">
+								<label for="food-check"> Food</label>
+							</div>
+						</div>
+
+						<div class="row forms-row">
+							<div class="col-md-6 col-12 forms-column">
+								<label class="description-label">No. of people traveling</label>
+							</div>
+							<div class="col-md-3 col-6 forms-column">
+								<label for="adults">Adults</label>
+								<select id="adults" class="input-field">
+									<option>1</option>
+									<option selected>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+								</select>
+							</div>
+							<div class="col-md-3 col-6 forms-column">
+								<label for="kids">Children</label>
+								<select id="kids" class="input-field">
+									<option selected>0</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>						
+								</select>
+							</div>
+						</div>
+							
+						<div class="row forms-row">
+							<div class="col-md-6 col-12 forms-column">
+								<label  class="description-label">Preference of accommodation</label>
+							</div>
+							<div class="col-md-3 col-6 forms-column">
+								<input type="checkbox" id="appartment-check">
+								<label for="appartmentCheck">Appartment</label>
+							</div>
+							<div class="col-md-3 col-6 forms-column">
+								<input type="checkbox" id="hotel-check">
+								<label for="hotelCheck">Hotel</label>
+							</div>
+						</div>
+
+						<div class="row forms-row">
+							<div class="col-md-4 col-12">
+								<label for="message" class="description-label">Other wishes or preferences</label>
+							</div>
+							<div class="col-md-8 col-12">
+								<textarea placeholder="Write here..." id="message" class="input-field"></textarea>
+							</div>
+						</div>
+
+						<div class="row forms-row">
+							<div class="col-md-10 col-12 forms-column">
+								<label  class="description-label">Your e-mail</label>
+								<input type="email" id="email" placeholder="example@icelandrules.com" class="input-field">
+							</div> 
+							<div class="col-md-2 col-12 forms-column">
+								<input type="submit" value="SEND" class="text-button">
+							</div>
+						</div>
+					</form>
+				</fieldset>
+			</div>
+		</section>
+
+
 
 		<!--Footer with cred to photo and icon providers-->
 		<footer>					
@@ -182,5 +224,24 @@
 				</div>
 		</footer>
 
+		<script>
+			// Your web app's Firebase configuration
+			var firebaseConfig = {
+			  apiKey: "AIzaSyC_BCjqEYVYtCmwx74LR4aOeItuIpCboH8",
+			  authDomain: "iceland-site.firebaseapp.com",
+			  databaseURL: "https://iceland-site.firebaseio.com",
+			  projectId: "iceland-site",
+			  storageBucket: "iceland-site.appspot.com",
+			  messagingSenderId: "699165820853",
+			  appId: "1:699165820853:web:e7ce5bb6c34002a6c87bfc"
+			};
+			// Initialize Firebase
+			firebase.initializeApp(firebaseConfig);
+
+			const db = firebase.firestore();
+		  </script>
+
+		<script src="script/jquery.js"></script>
+		<script src="script/main.js"></script>
 	</body>
 </html>

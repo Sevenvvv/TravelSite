@@ -14,13 +14,14 @@ body{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap;
+	justify-content: space-around;
 	width: 100%;
 	background-color: #addbc0;
 	position: fixed;
 	z-index: 1;
 	top: 0;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 
@@ -30,6 +31,7 @@ body{
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+	flex-basis: 10%;
 }
 
 .logo a{
@@ -40,6 +42,29 @@ body{
 	text-decoration: none;
 }
 
+.weather{
+	flex-basis: 10%;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	animation-name: fade;
+	animation-duration: 1s;
+}
+
+.weather p{
+	margin:0;
+}
+
+.weather div{
+	font-weight: bold;
+
+}
+
+@keyframes fade {
+	from {opacity: .4} 
+	to {opacity: 1}
+  }
+
 
 .text-button{
 	color: white;
@@ -49,6 +74,7 @@ body{
 	background-color: #6bcf93;
 	margin: 5px;
 	border-radius: 3px;
+	border:none;
 }
 
 .text-button:hover, 
@@ -163,13 +189,58 @@ about current page*/
 	opacity: 1;
 }
 
+/*Wish list section*/
+#wish-container{
+	margin-top: 10px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 90%;
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+#activities, #my-activities{
+	background-color:  #EBEDF0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	flex-basis: 40%;
+	padding: 20px;
+}
+
+.activity-item{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.activity-item:nth-child(even){
+	background-color: #e3e5e8;
+}
+
+.activity-item p{
+	margin: 0;
+	font-weight: bold;
+}
+
+button:disabled{
+	background-color: black;
+	cursor: none;
+}
+
 
 
 /*Travel plan form*/
 
 .forms-container{
 	margin-top: 10px;
-	padding-top: 60px;
 }
 
 fieldset{
@@ -182,12 +253,13 @@ fieldset{
 }
 
 legend{
-	width: 30%;
-	font-size: 20px;
+	width: 50%;
+	font-size: 18px;
 	text-align: center;
 	background-color: black;
 	color: white;
 	border-radius: 3px;
+	padding: 5px;
 }
 
 .forms-row{
@@ -218,7 +290,6 @@ label{
     margin-left: 5px;
 	margin-right: 5px;
 }
-
 
 #message{
 	width: 100%;
@@ -327,14 +398,16 @@ footer {
   in jQuery nav-bar is hidden for the slidetoggle-function to work correctly,
   but in this view nav-bar has to be shown*/
 
-@media (min-width: 993px){
+@media screen and (min-width: 993px){
 	.nav-bar {
 		display: flex !important;
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
 		padding:20px;
+		flex-basis: 75%;
 	}
+
 }
 
 /*Medium devices and down
@@ -342,14 +415,22 @@ footer {
 - Intro text moves underneath the intro image
 - Responsivness for gallery, form and other content*/
 
-@media (max-width: 992px) { 
-    .nav-bar { 
+@media screen and (max-width: 992px) { 
+	.nav-container{
+		flex-wrap: wrap;
+	}
+	
+	.nav-bar { 
         display: flex; 
     	flex-direction: column; 
     	justify-content: center; 
     	align-items: center; 
     	flex-basis: 100%;
-    } 
+	} 
+	
+	.logo{
+		flex-basis: 90%;
+	}
 
     #menu-toggle { 
         display: flex;
@@ -382,12 +463,16 @@ footer {
 		width: 280px;
 	}
 
+	#activities, #my-activities{
+		flex-basis: 90%;
+	}
+
 } 
 
 /*Extra small devices
 - Responsivness for gallery, form and other content*/
 
-@media (max-width: 600px){
+@media screen and (max-width: 600px){
 	.date.col-12{
 		justify-content: flex-end;
 	}
