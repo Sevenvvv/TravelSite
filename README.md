@@ -4,5 +4,6 @@ Website with built to practice responsiveness and dynamic functions using mostly
 
 Also includes functions to create wishlist using Firebase, and weather prediction slides using weather forecast API.
 
-Technologies: HTML, CSS, some jQuery, JavaScript, Firebase.
+Technologies: HTML, CSS, some jQuery, Bootstrap, JavaScript, Firebase.
 
+![Expanded](./screenshotExpanded.jpg)
